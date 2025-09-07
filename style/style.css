@@ -1,0 +1,203 @@
+@import 'root.css';
+
+body {
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+      background: url('/assets/background.webp') no-repeat center center/cover;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* Exibição da Senha */
+.password-display-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     backdrop-filter: blur(20px); /* Efeito de desfoque no que está por trás */
+    -webkit-backdrop-filter: blur(20px); 
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#password-display {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+    word-wrap: break-word;
+    word-break: break-all;
+    flex-grow: 1;
+    text-align: left;
+    padding-right: 10px;
+    background: none; /* Remove o fundo para a transparência do container */
+    border: none; /* Remove a borda */
+}
+
+#copy-button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#copy-button:hover {
+    background-color: var(--hover);
+}
+
+/* Controles e Opções */
+.controls-container {
+    text-align: left;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-left: 8px;
+    color: var(--white);
+}
+
+input[type="number"] {
+    width: 30px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.hidden {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Container do checkbox personalizado */
+.checkmark {
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    padding-left: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* O novo "quadrado" do checkbox (before) */
+.checkmark:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+/* Cor do novo checkbox quando está marcado (background-color) */
+.hidden:checked + .checkmark:before {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* O "visto" dentro do checkbox */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Mostra o "visto" quando o checkbox está marcado */
+.hidden:checked + .checkmark:after {
+    display: block;
+}
+
+.generate-button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.generate-button:hover {
+    background-color: var(--hover);
+}
+
+/* Indicador de Força */
+#strength-display {
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.weak { 
+    color: var(--weak);
+}
+
+.medium { 
+    color: var(--medium);
+}
+
+.strong { 
+    color: var(--strong);
+}
+
+.very-strong { 
+    color: var(--very-strong);
+}
+
+/* Mensagem de Erro */
+#message-display {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.error-message {
+    color: white;
+    font-weight: 500;
+    background-color: var(--error); 
+    padding: 10px;
+    border-radius: 5px;
+}
