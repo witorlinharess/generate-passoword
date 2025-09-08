@@ -19,6 +19,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -26,12 +27,12 @@ h1 {
     font-weight: 500;
 }
 
-/* Exibição da Senha */
+ /* password display */
 .password-display-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-     backdrop-filter: blur(20px); /* Efeito de desfoque no que está por trás */
+     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px); 
     border-radius: 5px;
     padding: 10px;
@@ -47,8 +48,8 @@ h1 {
     flex-grow: 1;
     text-align: left;
     padding-right: 10px;
-    background: none; /* Remove o fundo para a transparência do container */
-    border: none; /* Remove a borda */
+    background: none;
+    border: none;
 }
 
 #copy-button {
@@ -65,7 +66,7 @@ h1 {
     background-color: var(--hover);
 }
 
-/* Controles e Opções */
+/* options and controls */
 .controls-container {
     text-align: left;
 }
@@ -97,7 +98,7 @@ input[type="checkbox"] {
     width: 0;
 }
 
-/* Container do checkbox personalizado */
+/* container checkbox */
 .checkmark {
     position: relative;
     cursor: pointer;
@@ -109,7 +110,7 @@ input[type="checkbox"] {
     user-select: none;
 }
 
-/* O novo "quadrado" do checkbox (before) */
+/* box checkbox */
 .checkmark:before {
     content: "";
     position: absolute;
@@ -122,13 +123,12 @@ input[type="checkbox"] {
     transition: background-color 0.2s ease;
 }
 
-/* Cor do novo checkbox quando está marcado (background-color) */
 .hidden:checked + .checkmark:before {
     background-color: var(--primary);
     border-color: var(--primary);
 }
 
-/* O "visto" dentro do checkbox */
+/* ok checkbox */
 .checkmark:after {
     content: "";
     position: absolute;
@@ -144,7 +144,7 @@ input[type="checkbox"] {
     transform: rotate(45deg);
 }
 
-/* Mostra o "visto" quando o checkbox está marcado */
+/* check boxmarked  */
 .hidden:checked + .checkmark:after {
     display: block;
 }
@@ -166,7 +166,6 @@ input[type="checkbox"] {
     background-color: var(--hover);
 }
 
-/* Indicador de Força */
 #strength-display {
     font-weight: 500;
     margin-top: 15px;
@@ -188,7 +187,7 @@ input[type="checkbox"] {
     color: var(--very-strong);
 }
 
-/* Mensagem de Erro */
+/* mensage error */
 #message-display {
     margin-top: 15px;
     font-weight: bold;
@@ -200,4 +199,54 @@ input[type="checkbox"] {
     background-color: var(--error); 
     padding: 10px;
     border-radius: 5px;
+}
+
+/* responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 88%;
+         margin: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #passwordDisplay {
+        font-size: 1em; 
+    }
+
+    #copyButton {
+        padding: 10px 10px; 
+        font-size: 0.9em;
+    }
+
+    label {
+        font-size: 1em; 
+    }
+
+    .option {
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 12px; 
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        padding: 15px;
+         align-items: center;
+          justify-content: center;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    #passwordDisplay, #copyButton, label, button {
+        font-size: 0.9em;
+    }
 }
